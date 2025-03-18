@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Aishwarya Senthilkumar</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6f2ff;
+        }
+        .resume-container {
+            width: 60%;
+            margin: 20px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #0073e6;
+        }
+        h1 {
+            margin: 10px 0;
+            font-size: 28px;
+            color: #333;
+        }
+        p {
+            margin: 5px 0;
+            color: #666;
+        }
+        a {
+            text-decoration: none;
+            color: #0073e6;
+        }
+        h2 {
+            margin-top: 20px;
+            border-bottom: 2px solid #0073e6;
+            padding-bottom: 5px;
+            color: #0073e6;
+        }
+        h3 {
+            margin-top: 10px;
+            color: #333;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+            text-align: left;
+        }
+        section {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .download-btn {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .download-btn:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container" id="resume">
+        <header>
+            <img src="profile.jpg" class="profile-img">
+            <h1>AISHWARYA SENTHILKUMAR</h1>
+            <p><a href="mailto:aishwaryasenthilk6@gmail.com">aishwaryasenthilk6@gmail.com</a> | +91 8248580832 | Coimbatore</p>
+            <p><a href="https://www.linkedin.com/in/aishwarya-senthil-kumar-2bb166281" target="_blank">LinkedIn Profile</a></p>
+        </header>
+
+        <section class="about">
+            <h2>ABOUT</h2>
+            <p>I'm a dedicated Computer Science student with a passion for Web Designing, Human Resources, and UI/UX Designing. Proficient in basic programming languages, currently seeking opportunities to leverage technical skills and a creative mindset to contribute effectively to innovative projects in both technical and human resource domains.</p>
+        </section>
+
+        <section class="education">
+            <h2>EDUCATION</h2>
+            <p><strong>Arokiamatha Matriculation Higher Secondary School</strong><br>Class 12 - 98.5% (2023)</p>
+            <p><strong>Sri Ramakrishna College of Arts and Science for Women</strong><br>Bachelor of Computer Applications (BCA) (2023 - 2026)<br>Previous Semester - 89%</p>
+        </section>
+
+        <section class="skills">
+            <h2>SKILLS</h2>
+            <h3>Technical Skills</h3>
+            <ul>
+                <li>Photoshop</li>
+                <li>C</li>
+                <li>Java</li>
+                <li>HTML & CSS</li>
+            </ul>
+            <h3>Non-Technical Skills</h3>
+            <ul>
+                <li>Communication</li>
+                <li>Decision Making</li>
+                <li>Problem Solving</li>
+            </ul>
+        </section>
+
+        <section class="internship">
+            <h2>INTERNSHIP EXPERIENCE</h2>
+            <p><strong>Bhumi NGO</strong> - Human Resources Intern (Aug 2024 - Present)</p>
+            <p>My role is to scrutinize applications and conduct telephonic interviews for candidates. This experience helped me strengthen my decision-making skills.</p>
+        </section>
+
+        <section class="certifications">
+            <h2>CERTIFICATIONS</h2>
+            <ul>
+                <li><strong>Language Proficiency Certifications:</strong> Cleared Level 8 Hindi Examinations (Dakshin Bharat Hindi Prachar Sabha)</li>
+                <li><strong>English Language Communication</strong> - STEP from The Hindu Group (Naan Mudhalvan)</li>
+                <li><strong>Digital 101 (30 hours)</strong> - Nasscom</li>
+                <li><strong>Infosys Springboard:</strong> Introduction to Machine Learning, Foundations of Coding using Python</li>
+                <li><strong>Great Learning:</strong> Front-End Development - HTML</li>
+                <li><strong>Augmented Reality Course</strong> - VConnect Media (30 Hours)</li>
+            </ul>
+        </section>
+
+        <section class="achievements">
+            <h2>ACHIEVEMENTS</h2>
+            <ul>
+                <li>Secured Second Prize for Paper Presentation at Jarvis 2025 - VLB Janakiammal College of Arts and Science</li>
+                <li>Presented paper "Smart Cities & Aging: Infrastructure for the Elderly" at an International Conference organized by Dr. NGP Arts and Science College</li>
+                <li>Regional Pre-Finalist of ICT Youth Talk 2023</li>
+                <li>Participant of Socio-Tech Hackathon 2024 (KPR College of Arts and Science) and Cyber Hackathon (Sri Krishna Arts and Science College)</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="btn-container">
+        <button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF('p', 'mm', 'a4');
+
+            html2canvas(document.querySelector("#resume")).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                pdf.addImage(imgData, 'PNG', 10, 10, 190, 270);
+                pdf.save("Aishwarya_Senthilkumar_Resume.pdf");
+            });
+        }
+    </script>
+
+</body>
+</html>
